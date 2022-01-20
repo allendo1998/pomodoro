@@ -12,22 +12,22 @@
     <form>
         <!-- Focused Work -->
         <label for="work">Focused Work</label><br>
-        <input type="range" name="work_amountRange" min="15" max="60" value="25" oninput="this.form.work_amountInput.value=this.value" />
+        <input type="range" id="work" name="work_amountRange" min="15" max="60" value="25" oninput="this.form.work_amountInput.value=this.value" />
         <input type="number" name="work_amountInput" min="15" max="60" value="25" oninput="this.form.work_amountRange.value=this.value" /><br>
 
         <!-- Short Break -->
         <label for="shortBreak">Short Break</label><br>
-        <input type="range" name="shortBreak_amountRange" min="5" max="30" value="5" oninput="this.form.shortBreak_amountInput.value=this.value" />
+        <input type="range" id="shortBreak" name="shortBreak_amountRange" min="5" max="30" value="5" oninput="this.form.shortBreak_amountInput.value=this.value" />
         <input type="number" name="shortBreak_amountInput" min="5" max="30" value="5" oninput="this.form.shortBreak_amountRange.value=this.value" /><br>
 
         <!-- Long Break -->
         <label for="longBreak">Longer Break</label><br>
-        <input type="range" name="longBreak_amountRange" min="30" max="120" value="60" oninput="this.form.longBreak_amountInput.value=this.value" />
+        <input type="range" id="longBreak" name="longBreak_amountRange" min="30" max="120" value="60" oninput="this.form.longBreak_amountInput.value=this.value" />
         <input type="number" name="longBreak_amountInput" min="30" max="120" value="60" oninput="this.form.longBreak_amountRange.value=this.value" /><br>
 
         <!-- Rounds -->
         <label for="rounds">Rounds</label><br>
-        <input type="range" name="rounds_amountRange" min="0" max="10" value="4" oninput="this.form.rounds_amountInput.value=this.value" />
+        <input type="range" id="rounds" name="rounds_amountRange" min="0" max="10" value="4" oninput="this.form.rounds_amountInput.value=this.value" />
         <input type="number" name="rounds_amountInput" min="0" max="10" value="4" oninput="this.form.rounds_amountRange.value=this.value" /><br>
 
         <!-- Button -->
@@ -35,7 +35,7 @@
     </form>
 
 
-    <script>
+    <!-- <script>
         function startPomodoro(){ 
 
         var focused_work = document.getElementById('work').value;
@@ -44,13 +44,12 @@
         var rounds = document.getElementById('rounds').value;
 
         // Debugging
-        // window.alert("focused work: " + focused_work);
-        // window.alert("short break: " + short_break);
-        // window.alert("long break: " + long_break);
-        // window.alert("rounds: " + rounds);
-        console.log("it worked");
+        window.alert("focused work: " + focused_work);
+        window.alert("short break: " + short_break);
+        window.alert("long break: " + long_break);
+        window.alert("rounds: " + rounds);
         }
-    </script>
+    </script> -->
  
 </body>
 </html>
