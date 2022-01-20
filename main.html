@@ -18,7 +18,26 @@
         <input type="range" id="lbreak" name="lbreak" min="15" max="60"><br>
         <label for="rounds">Rounds</label><br>
         <input type="range" id="rounds" name="rounds" min="15" max="60"><br>
+        <input class="button" name="submit" type="submit" value="Start Pomodoro" onclick="startPomodoro()" />
     </form>
 
+
+    <script>
+        function startPomodoro(){ 
+
+        var focused_work = document.getElementById('fwork').value;
+        var short_break = document.getElementById('sbreak').value;
+        var long_break = document.getElementById('lbreak').value;
+        var rounds = document.getElementById('rounds').value;
+
+        // Debugging
+        // window.alert("focused work: " + focused_work);
+        // window.alert("short break: " + short_break);
+        // window.alert("long break: " + long_break);
+        // window.alert("rounds: " + rounds);
+        console.log("it worked");
+        }
+    </script>
+ 
 </body>
 </html>
