@@ -3,14 +3,15 @@ const timer = () => {
     var remainingSeconds = 5;
 
     const button = document.querySelector('.startButton');
-    const timer = document.querySelector('.timer');
-
 
     button.addEventListener('click', () =>{
-        console.log(button);
-        startTime();
+        if(isActive === null){
+            startTime();
+        }
+        else {
+            stopTime();
+        }
     });
-
 
     function startTimer(){
 
@@ -34,9 +35,6 @@ const timer = () => {
             }
         },1000);
     }
-
-
-
 
     function getMinutes(){
         return Math.floor(remainingSeconds /60);
