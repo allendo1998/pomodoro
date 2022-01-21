@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <script src="timer.js"></script>
+
+</head>
+<body>
+    <h1>Settings</h1>
+
+    <form>
+        <!-- Focused Work -->
+        <label for="work">Focused Work</label><br>
+        <input type="range" id="work" name="work_amountRange" min="15" max="60" value="25" oninput="this.form.work_amountInput.value=this.value" />
+        <input type="number" name="work_amountInput" min="15" max="60" value="25" oninput="this.form.work_amountRange.value=this.value" /><br>
+
+        <!-- Short Break -->
+        <label for="shortBreak">Short Break</label><br>
+        <input type="range" id="shortBreak" name="shortBreak_amountRange" min="5" max="30" value="5" oninput="this.form.shortBreak_amountInput.value=this.value" />
+        <input type="number" name="shortBreak_amountInput" min="5" max="30" value="5" oninput="this.form.shortBreak_amountRange.value=this.value" /><br>
+
+        <!-- Button -->
+        <input class="button" name="submit" type="submit" value="Start Pomodoro" onclick="startPomodoro()" />
+    </form>
+
+</body>
+</html>

@@ -1,7 +1,3 @@
-// var interval = null;
-// var remainingSeconds = 90;
-
-
 // const minutes = Math.floor(remainingSeconds / 60);
 // const seconds = remainingSeconds % 60;
 
@@ -19,8 +15,14 @@ function startTimer(duration){
         console.log(remainingSeconds);
 
         if(remainingSeconds === 0){
+
             clearInterval(interval);
         }
     },1000);
+}
+
+
+function startPomodoro(){
+    console.log("Helloe World");
 }
 
