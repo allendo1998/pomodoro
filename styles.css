@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #85dcb8;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: lightblue;
+}
+
+.startButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    margin-top:10vh;
+    width: 40%;
+    height: 6vh;
+    background-color: transparent;
+    color: #E27D60;
+    border: 2px solid #E27D60;
+    border-radius: 8px;
+    
+  }
+  
+h2 {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 100px;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    color: #41B3A3;
+}
