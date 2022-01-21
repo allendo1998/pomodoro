@@ -12,10 +12,6 @@ body {
     min-height: 100vh;
 }
 
-.card {
-    background-color: lightblue;
-}
-
 .startButton {
     display: flex;
     align-items: center;
