@@ -1,5 +1,5 @@
 const timer = () => {
-    var isActive = null;
+    var interval = null;
 
     var break_time = 3;
     var focused_work = 5;
@@ -7,7 +7,7 @@ const timer = () => {
     var remainingSeconds = 0;
     var section = 0; // section 0 = focused work, 1 = break time
 
-
+    updatePage();
     updateSectionTime();
     updateTime();
 
@@ -15,7 +15,7 @@ const timer = () => {
     const nextButton = document.querySelector(".nextButton");
 
     button.addEventListener('click', () =>{
-        if(isActive === null){
+        if(interval === null){
             startTime();
         }
         else {
@@ -24,22 +24,7 @@ const timer = () => {
     });
 
     nextButton.addEventListener('click', () => {
-        if(section === 0){
-            section = 1;
-            change();
-            updateButton();
-            updatePage();
-            updateSectionTime();
-            updateTime();
-        }
-        else{
-            section = 0;
-            change();
-            updateButton();
-            updatePage();
-            updateSectionTime();
-            updateTime();
-        }
+        switchSection();
     });
 
     function updateSectionTime(){
@@ -55,9 +40,49 @@ const timer = () => {
     function updatePage(){
         if(section === 0){
             document.getElementById("task").innerHTML = "Focused Work";
+            document.getElementById("changeButton").style.color = "#E27D60";
+            document.getElementById("changeButton").style.borderColor = "#E27D60";
+            document.getElementById("time").style.color = "white";
+            document.getElementById("task").style.color = "#41B3A3";
+            document.body.style.backgroundColor = "#85dcb8";
+
+            var elements = document.getElementsByClassName("card");
+
+            for(var i = 0; i < elements.length; i++){
+                elements[i].style.backgroundColor = "#85dcb8";
+            }
         }
         else{
             document.getElementById("task").innerHTML = "Break";
+            document.getElementById("changeButton").style.color = "#5DA2D5";
+            document.getElementById("changeButton").style.borderColor = "#5DA2D5";
+            document.getElementById("time").style.color = "#ECECEC";
+            document.getElementById("task").style.color = "#F78888";
+            document.body.style.backgroundColor = "#F3D250";
+
+            var elements = document.getElementsByClassName("card");
+
+            for(var i = 0; i < elements.length; i++){
+                elements[i].style.backgroundColor = "#F3D250";
+            }
+            
+        }
+    }
+
+    function switchSection(){
+        if(section === 0){
+            section = 1;
+            stopTime();
+            updatePage();
+            updateSectionTime();
+            updateTime();
+        }
+        else{
+            section = 0;
+            stopTime();
+            updatePage();
+            updateSectionTime();
+            updateTime();
         }
     }
 
@@ -75,6 +100,7 @@ const timer = () => {
 
             if(remainingSeconds === 0){
                 stopTime();
+                switchSection();
             }
         },1000);
     }
@@ -93,23 +119,17 @@ const timer = () => {
     }
 
     function stopTime(){
-        isActive = null;
+        clearInterval(interval);
+        interval = null;
         updateButton();
-        clearInterval(interval);
-    }
-
-    function change(){
-        isActive = null;
-        clearInterval(interval);
     }
 
     function startTime(){
         startTimer();
-        isActive = 1;
     }
 
     function updateButton(){
-        if(isActive === null){
+        if(interval === null){
             document.getElementById("changeButton").innerHTML = "Start";
         }
         else{
