@@ -31,9 +31,14 @@ body {
     color: #E27D60;
     border: 3px solid #E27D60;
     border-radius: 8px;
-    
   }
-  
+
+.nextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 h2 {
     font-family: 'Oswald', sans-serif;
     color: white;
