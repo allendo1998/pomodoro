@@ -75,7 +75,7 @@ const timer = () => {
             stopTime();
             updatePage();
             updateSectionTime();
-            updateTime();
+            updateTime();            
         }
         else{
             section = 0;
