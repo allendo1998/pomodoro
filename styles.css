@@ -5,30 +5,30 @@
 }
 
 body {
+    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height:150px;
+    width:300px;
 }
 
 .controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25vh;
 }
 
 .heading {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 25vh;
 }
 
 .btn {
-    margin-top:10vh;
+    margin-left:30vh;
+    height:35px;
     width: 40%;
-    height: 8vh;
     background-color: transparent;
     color: #E27D60;
     border: 3px solid #E27D60;
@@ -36,7 +36,6 @@ body {
   }
 
 .nextButton {
-    margin-top:10vh;
     margin-left: 5vh;
 }
 
@@ -60,26 +59,14 @@ body {
     }
   }
 
-
-.settings {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cog {
-    flex: 50%;
-    text-align: right;
-}
-
 h2 {
     font-family: 'Oswald', sans-serif;
     color: white;
-    font-size: 100px;
+    font-size: 60px;
 }
 
 p {
     font-family: 'Inter', sans-serif;
-    font-size: 25px;
+    font-size: 15px;
     color: #41B3A3;
 }
