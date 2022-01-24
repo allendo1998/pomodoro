@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Pomodoro</title>
 </head>
 <body>
     <div class="card">
 
         <div class="heading">
-            <p id="task">Focused Work</p>
+            <p id="task"></p>
         </div>
 
         <div class="timer">
@@ -19,24 +20,12 @@
         </div>
 
         <div class="controls">
-            <button id="changeButton" class="btn">Start</button>
-            <div class= "nextButton">
-                <svg class="triangle" width="30" height="30" viewBox="0 0 102 107" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                  <mask id="path-1-inside-1_204_2" fill="white">
-                  <path d="M98.1323 47.2964C103.142 49.9151 103.142 57.0849 98.1323 59.7036L10.2428 105.646C5.58221 108.082 2.87792e-06 104.701 3.10779e-06 99.4422L7.12419e-06 7.55775C7.35406e-06 2.29884 5.5822 -1.08204 10.2428 1.35418L98.1323 47.2964Z"/>
-                  </mask>
-                  <path d="M10.2428 1.35418L13.9488 -5.73563L10.2428 1.35418ZM10.2428 105.646L6.53676 98.556L10.2428 105.646ZM94.4262 52.6138L6.53676 98.556L13.9488 112.736L101.838 66.7934L94.4262 52.6138ZM8 99.4422L8.00001 7.55775L-7.99999 7.55775L-8 99.4422L8 99.4422ZM6.53675 8.44398L94.4262 54.3862L101.838 40.2066L13.9488 -5.73563L6.53675 8.44398ZM8.00001 7.55775C8.00001 8.30903 7.20255 8.79201 6.53675 8.44398L13.9488 -5.73563C3.96185 -10.9561 -7.99999 -3.71135 -7.99999 7.55775L8.00001 7.55775ZM6.53676 98.556C7.20253 98.208 8 98.6909 8 99.4422L-8 99.4422C-8 110.711 3.96188 117.956 13.9488 112.736L6.53676 98.556ZM101.838 66.7934C112.573 61.1819 112.573 45.818 101.838 40.2066L94.4262 54.3862C94.3145 54.3278 94.1476 54.1885 94.0272 53.9806C93.9218 53.7985 93.8895 53.6312 93.8895 53.5C93.8895 53.3688 93.9218 53.2015 94.0272 53.0194C94.1476 52.8115 94.3145 52.6722 94.4262 52.6138L101.838 66.7934Z" fill="black" mask="url(#path-1-inside-1_204_2)"/>
-                  </g>
-                  </svg>
-            </div>
-            
+            <span id="changeButton" class="material-icons btn">play_circle_outline</span>
+            <span class="material-icons nextButton">skip_next</span>  
+        </div>        
     </div>
 
     <script src="timer.js"></script>
 
 </body>
 </html>
-
-
-<!-- 300, 500 -->

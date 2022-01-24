@@ -43,7 +43,7 @@ const timer = () => {
             document.getElementById("changeButton").style.color = "#E27D60";
             document.getElementById("changeButton").style.borderColor = "#E27D60";
             document.getElementById("time").style.color = "white";
-            document.getElementById("task").style.color = "#41B3A3";
+            document.getElementById("task").style.color = "#23665d";
             document.body.style.backgroundColor = "#85dcb8";
 
             var elements = document.getElementsByClassName("card");
@@ -130,10 +130,11 @@ const timer = () => {
 
     function updateButton(){
         if(interval === null){
-            document.getElementById("changeButton").innerHTML = "Start";
+            document.getElementById("changeButton").innerHTML = "play_circle_outline";
+
         }
         else{
-            document.getElementById("changeButton").innerHTML = "Pause";
+            document.getElementById("changeButton").innerHTML = "pause_circle_outline";
         }
     }
 }
