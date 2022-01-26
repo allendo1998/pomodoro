@@ -1,8 +1,9 @@
 const timer = () => {
     var interval = null;
 
-    var break_time = 3;
-    var focused_work = 5;
+    var break_time;
+    var focused_work;
+    updateValues();
 
     var remainingSeconds = 0;
     var section = 0; // section 0 = focused work, 1 = break time
@@ -14,6 +15,7 @@ const timer = () => {
     const button = document.querySelector(".btn");
     const nextButton = document.querySelector(".nextButton");
     const settings = document.querySelector(".settings");
+
 
     button.addEventListener('click', () =>{
         if(interval === null){
@@ -29,7 +31,6 @@ const timer = () => {
     });
 
     settings.addEventListener('click', () =>{
-        console.log("settings");
         window.location.replace("setting.html");
     });
 
@@ -113,7 +114,6 @@ const timer = () => {
 
     function updateTime(){
         document.getElementById("time").innerHTML = getMinutes().toString().padStart(2, "0") + ":" + getSeconds().toString().padStart(2, "0");
-
     }
 
     function getMinutes(){
@@ -142,6 +142,20 @@ const timer = () => {
         else{
             document.getElementById("changeButton").innerHTML = "pause_circle_outline";
         }
+    }
+
+    function updateValues() {
+        chrome.storage.sync.get("work", function(items) {
+            if (!chrome.runtime.error) {
+                focused_work = items.work * 60;
+            }
+          });
+
+        chrome.storage.sync.get("break", function(items) {
+            if (!chrome.runtime.error) {
+                break_time = items.break * 60;
+            }
+          });
     }
 }
 

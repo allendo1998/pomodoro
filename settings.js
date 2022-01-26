@@ -3,21 +3,35 @@ const settings = () => {
     var focused_work = document.getElementById("focused_work");
     var short_break = document.getElementById("short_break");
 
+    updateValues();
+
     saveSettings.addEventListener('click', () =>{
         var work = focused_work.value;
         var sbreak = short_break.value;
-        
-        chrome.storage.sync.set({"focusedWork": work, "shortBreak": sbreak}, 
-        function() {
-            console.log("value is set to " + work);
-            console.log("value is set to " + sbreak);
-        })
+
+        chrome.storage.sync.set({ 
+            "work" : work,
+            "break": sbreak,
+     }, function() {
+            if (chrome.runtime.error) {
+              console.log("Runtime error.");
+            }
+          });
+    window.location.replace("index.html");
     });
 
+    function updateValues() {
+        chrome.storage.sync.get("work", function(items) {
+            if (!chrome.runtime.error) {
+                focused_work.value = items.work;
+            }
+          });
 
-
-    function save_settings() {
-
+        chrome.storage.sync.get("break", function(items) {
+            if (!chrome.runtime.error) {
+                short_break.value = items.break;
+            }
+          });
     }
 
 }
