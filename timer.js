@@ -13,6 +13,7 @@ const timer = () => {
 
     const button = document.querySelector(".btn");
     const nextButton = document.querySelector(".nextButton");
+    const settings = document.querySelector(".settings");
 
     button.addEventListener('click', () =>{
         if(interval === null){
@@ -25,6 +26,11 @@ const timer = () => {
 
     nextButton.addEventListener('click', () => {
         switchSection();
+    });
+
+    settings.addEventListener('click', () =>{
+        console.log("settings");
+        window.location.replace("setting.html");
     });
 
     function updateSectionTime(){

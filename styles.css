@@ -28,6 +28,12 @@ body {
     cursor: pointer;
 }
 
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #cog {
     font-size: 20px !important;
     color:rgb(219, 219, 219);
