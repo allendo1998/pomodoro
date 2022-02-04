@@ -1,9 +1,8 @@
 const timer = () => {
     var interval = null;
 
-    var break_time;
-    var focused_work;
-    updateValues();
+    var break_time = 5;
+    var focused_work = 45;
 
     var remainingSeconds = 0;
     var section = 0; // section 0 = focused work, 1 = break time
@@ -142,20 +141,6 @@ const timer = () => {
         else{
             document.getElementById("changeButton").innerHTML = "pause_circle_outline";
         }
-    }
-
-    function updateValues() {
-        chrome.storage.sync.get("work", function(items) {
-            if (!chrome.runtime.error) {
-                focused_work = items.work * 60;
-            }
-          });
-
-        chrome.storage.sync.get("break", function(items) {
-            if (!chrome.runtime.error) {
-                break_time = items.break * 60;
-            }
-          });
     }
 }
 
