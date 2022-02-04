@@ -142,6 +142,22 @@ const timer = () => {
             document.getElementById("changeButton").innerHTML = "pause_circle_outline";
         }
     }
+
+    function checkAlarm(callback) {
+        chrome.alarms.getAll(function(alarms) {
+            if(alarms[0] != null){
+                return alarms[0];
+            }
+            else{
+                return null;
+            }
+        })
+    }
+
+    function getRemainingTime(scheduledTime) {
+        var date = new Date();
+        return scheduledTime - date;
+    }
 }
 
 timer();
